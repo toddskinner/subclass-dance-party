@@ -6,6 +6,12 @@ body{
   background-color:#444;
   font-size: 18px;
 }
+
+.background{
+  background: url('img/dancefloor2.jpg') no-repeat;
+  background-size: cover;
+}
+
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
@@ -18,10 +24,15 @@ body, a:link, a:visited, a:active{
   background-color: #555;
 }
 .title{
-  background-color: #777;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  font-size: 40px;
+  font-weight: bold;
+  background-color: black;
 }
 .dancer{
   border:10px solid red;
-  border-radius:10px;
+  border-radius:0px;
   position:absolute;
 }
