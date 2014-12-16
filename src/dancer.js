@@ -4,9 +4,9 @@ var makeDancer = function(top, left, timeBetweenSteps){
   //var dancer = {};
 
   // use jQuery to create an HTML <span> tag
+
   this.$node = $('<span class="dancer"></span>');
-
-
+  this.time_steps = timeBetweenSteps;
   this.step();
 
 
@@ -20,9 +20,15 @@ var makeDancer = function(top, left, timeBetweenSteps){
   makeDancer.prototype.step = function(){
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
-    var that = this;
-    setTimeout(this.step, this.timeBetweenSteps);
-  };
+    //var that = this;
+    //
+    // var that = this;   this this refers to makeDancer obj
+    // var stepTime = function(){
+    //   that.step();
+    // };
+
+    setTimeout( this.step.bind(this), this.time_steps);  //the bound this refers to the caller of step which will be a makeBlinkyDancer obj
+  };// the first this (i.e. context) gets replaced by the second this
 
   makeDancer.prototype.setPosition = function(top, left){
     // Use css top and left properties to position our <span> tag
