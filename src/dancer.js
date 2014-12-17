@@ -54,10 +54,10 @@ var makeDancer = function(top, left, timeBetweenSteps){
         var distance = Math.pow(squared_top + squared_left, .5);
 
 
-        console.log(distance);
-         if(distance > 500){
-            $(this).css({border: 50, color: red});
-         }
+        //console.log(distance);
+        // if(distance > 500){
+        //    $(this).css({border: 50, color: red});
+    //     }
 
 
       }
