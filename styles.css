@@ -5,6 +5,7 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  overflow: hidden;
 }
 
 .background{
@@ -22,6 +23,7 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
+  font-weight: bold;
 }
 .title{
   /*content: url('img/dream.jpg') no-repeat;*/
@@ -31,20 +33,21 @@ body, a:link, a:visited, a:active{
   font-size: 40px;
   font-weight: bold;
   background-color: black;
+  text-decoration: none;
 }
 
 .lineUp{
   z-index: 10;
 }
 
+.dancefloor{
+  margin: 30px;
+}
+
 .dancer{
   content: url('img/dancer16.gif') no-repeat;
   border:none;
   position:absolute;
-
-  -webkit-animation:spin 4s linear infinite;
-  -moz-animation:spin 4s linear infinite;
-  animation:spin 4s linear infinite;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
@@ -63,4 +66,7 @@ body, a:link, a:visited, a:active{
   content: url('img/dancer15.gif') no-repeat;
   border:none;
   position:absolute;
+  -webkit-animation:spin 0s linear infinite;
+  -moz-animation:spin 0s linear infinite;
+  animation:spin 0s linear infinite;
 }

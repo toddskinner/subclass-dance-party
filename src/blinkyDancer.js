@@ -8,6 +8,10 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps){
   //this.oldStep = this.step;
 
 
+  //POSITION
+  this.tops = top;
+  this.lefts= left;
+
   // return blinkyDancer;
 };
 

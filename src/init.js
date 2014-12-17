@@ -25,7 +25,7 @@ $(document).ready(function(){
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 3000
+      Math.random() * 20000
     );
     $('.dancefloor').append(dancer.$node);
 
@@ -33,21 +33,38 @@ $(document).ready(function(){
     window.dancers.push(dancer);
   });
 
-  $('.dancefloor').on("mouseover", 'span', function(){
-      console.log("clicked");
+  $('body').on("mouseover", '.dancer', function(event){
+        $(this).css({top: -1000, left: -1000});
+        // console.log(window.dancers[0].top);
   });
 
   $(".lineUp").on("click", function(){
     for(var i = 0; i < window.dancers.length; i++){
       var rand = Math.floor(Math.random() * 100);
-      console.log(rand);
-      window.dancers[i].setPosition(50, 0);
+      // console.log(rand);
+      window.dancers[i].setPosition(rand, 0);
     }
 
     //console.log(window.dancers);
+  });//  mouseover
 
+   // console.log($(this).top);
+   //
+  var context = this;
+  // $('body').on("mouseover", function(event){
+  // setInterval(function(){
+  //     for(i = 0; i < window.dancers.length; i ++){
+  //       var item = window.dancers[i];
+  //       var squared_top = Math.pow(($(context).top - item.top), 2);
+  //       var squared_left = Math.pow(($(context).left - item.left),2);
+  //       var distance = Math.pow((squared_top + squared_left), .5);
 
-  });
+  //       console.log(distance);
+  //   }
+  // }, 3000);
+// });
+
+// calc_dist();
 
 
 });

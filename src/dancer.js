@@ -8,6 +8,9 @@ var makeDancer = function(top, left, timeBetweenSteps){
   this.$node = $('<span class="dancer"></span>');
   this.time_steps = timeBetweenSteps;
   this.step();
+  this.top = top;
+  this.left = left;
+
 
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
@@ -26,7 +29,7 @@ var makeDancer = function(top, left, timeBetweenSteps){
     // var stepTime = function(){
     //   that.step();
     // };
-
+    this.calc_dist();
     setTimeout( this.step.bind(this), this.time_steps);  //the bound this refers to the caller of step which will be a makeBlinkyDancer obj
   };// the first this (i.e. context) gets replaced by the second this
 
@@ -40,6 +43,26 @@ var makeDancer = function(top, left, timeBetweenSteps){
     };
     this.$node.css(styleSettings);
   };
+
+
+  makeDancer.prototype.calc_dist = function(){
+      for(i = 0; i < window.dancers.length; i ++){
+        var item = window.dancers[i];
+        var squared_top = Math.pow(this.top - item.top, 2);
+        var squared_left = Math.pow(this.left - item.left, 2);
+
+        var distance = Math.pow(squared_top + squared_left, .5);
+
+
+        console.log(distance);
+         if(distance > 500){
+            $(this).css({border: 50, color: red});
+         }
+
+
+      }
+  }
+ // calc_dist();
 /****** OLD CODE *********
 
 // Creates and returns a new dancer object that can step
