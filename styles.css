@@ -8,7 +8,7 @@ body{
 }
 
 .background{
-  background: url('img/dancefloor2.jpg') no-repeat;
+  background: url('img/dream.jpg') no-repeat;
   background-size: cover;
 }
 
@@ -24,6 +24,7 @@ body, a:link, a:visited, a:active{
   background-color: #555;
 }
 .title{
+  /*content: url('img/dream.jpg') no-repeat;*/
   width: 100%;
   text-align: center;
   position: relative;
@@ -31,10 +32,16 @@ body, a:link, a:visited, a:active{
   font-weight: bold;
   background-color: black;
 }
+
+.lineUp{
+  z-index: 10;
+}
+
 .dancer{
   content: url('img/dancer16.gif') no-repeat;
   border:none;
   position:absolute;
+
   -webkit-animation:spin 4s linear infinite;
   -moz-animation:spin 4s linear infinite;
   animation:spin 4s linear infinite;
